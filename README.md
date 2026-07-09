@@ -297,8 +297,7 @@ read-only. On the map for future releases:
 - **Portable `.por` format** — the older text-based SPSS portable format.
 - **Writing `.sav` files** — the reader is read-only; a writer is a possible future addition.
 
-Issues and contributions are welcome at
-[github.com/everydaydesign/spssreader](https://github.com/everydaydesign/spssreader).
+Issues and contributions are welcome.
 
 ## License
 

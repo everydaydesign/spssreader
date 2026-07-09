@@ -1,6 +1,6 @@
 {
   "name": "spssreader",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Correct, zero-dependency SPSS .sav/.zsav reader for the browser and Node — validated against R haven.",
   "license": "MIT",
   "author": "everydaydesign",
