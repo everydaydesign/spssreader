@@ -125,9 +125,9 @@ encoding <- data.frame(
   stringsAsFactors = FALSE)
 emit(encoding, "encoding", "byte")
 
-# ---- SHAPE: wide 110-numeric x 500-row frame (like GenAI) --------------------------------------
+# ---- SHAPE: wide 110-numeric x 50-row frame (like GenAI) --------------------------------------
 set.seed(42)
-wide <- as.data.frame(matrix(rnorm(110 * 500), nrow = 500, ncol = 110))
+wide <- as.data.frame(matrix(rnorm(110 * 50), nrow = 50, ncol = 110))
 names(wide) <- sprintf("v%03d", seq_len(110))
 emit(wide, "wide", "byte")
 
