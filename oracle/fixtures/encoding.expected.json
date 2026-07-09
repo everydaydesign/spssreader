@@ -1,0 +1,1 @@
+{"variables":[{"name":"city","type":"string","valueKind":"string","values":["Zürich","Malmö","São Paulo"],"missing":{"kind":"none"}},{"name":"note","type":"numeric","valueKind":"number","values":[1,2,1],"missing":{"kind":"none"},"label":"Crème","valueLabels":[{"value":1,"label":"café"},{"value":2,"label":"naïve"}]}]}

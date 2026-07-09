@@ -1,0 +1,1 @@
+{"variables":[{"name":"code","type":"string","valueKind":"string","values":["alpha-bravo-1234","charlie-delta-56","echo-foxtrot-789"],"missing":{"kind":"none"}},{"name":"grp","type":"numeric","valueKind":"number","values":[1,2,3],"missing":{"kind":"none"},"label":"Group","valueLabels":[{"value":1,"label":"Control"},{"value":2,"label":"Treated"},{"value":3,"label":"Placebo"}]}]}

@@ -1,0 +1,1 @@
+{"variables":[{"name":"id","type":"numeric","valueKind":"number","values":[1,2,3],"missing":{"kind":"none"}},{"name":"score","type":"numeric","valueKind":"number","values":[5.5,2.25,9],"missing":{"kind":"none"}},{"name":"name","type":"string","valueKind":"string","values":["alice","bob","carol"],"missing":{"kind":"none"}}]}

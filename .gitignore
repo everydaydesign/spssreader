@@ -1,0 +1,10 @@
+dist
+*.tsbuildinfo
+
+GenAI.sav
+oracle/fixtures/genai.expected.json
+test/data/GenAI.sav
+test/data/genai*.json
+
+node_modules
+*.tgz
