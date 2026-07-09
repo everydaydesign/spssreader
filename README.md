@@ -252,9 +252,6 @@ them — call `applyUserMissing(sheet)` to fold them to `null`. A variable's dec
 | Encodings      | file-declared encoding via `TextDecoder` (UTF-8, windows-125x, …)   |
 | Endianness     | little-endian                                                       |
 
-**Not (yet) covered:** big-endian system files, and the portable `.por` format. `spssreader` is
-**read-only** — it does not write `.sav` files.
-
 ## Correctness
 
 Every supported construct is validated **value-for-value against R `haven`** (which wraps the
@@ -289,6 +286,19 @@ Recommendations for consumers:
 - Treat `Variable.name` (and other file-derived strings) as **untrusted** — don't use a variable
   name as a plain-object key without care; prefer a `Map` or a `null`-prototype object to avoid
   prototype-pollution surprises from adversarial names.
+
+## Roadmap
+
+`spssreader` reads modern little-endian `.sav`/`.zsav` files correctly today, and is intentionally
+read-only. On the map for future releases:
+
+- **Big-endian system files** — the header already detects byte order; big-endian *data* reading and
+  `haven` validation are not yet implemented.
+- **Portable `.por` format** — the older text-based SPSS portable format.
+- **Writing `.sav` files** — the reader is read-only; a writer is a possible future addition.
+
+Issues and contributions are welcome at
+[github.com/everydaydesign/spssreader](https://github.com/everydaydesign/spssreader).
 
 ## License
 
