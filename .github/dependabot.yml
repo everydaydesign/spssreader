@@ -19,8 +19,9 @@ updates:
     commit-message:
       prefix: "chore(deps)"
     ignore:
-      # TypeScript majors are deliberate migrations (e.g. the 7.x native compiler), not auto-bumps.
-      - dependency-name: "typescript"
+      # Majors are deliberate migrations, not auto-bumps; security majors still surface via
+      # Dependabot alerts + `bun audit`.
+      - dependency-name: "*"
         update-types: ["version-update:semver-major"]
     groups:
       minor-and-patch:
