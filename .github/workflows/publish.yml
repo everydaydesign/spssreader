@@ -1,0 +1,38 @@
+name: Publish
+
+# Release flow: bump version, commit, `git tag vX.Y.Z && git push --tags`.
+# This builds, tests, and publishes to npm WITH provenance (a signed, verifiable link
+# between the published tarball and this repo+commit+workflow run).
+#
+# ONE-TIME SETUP required before the first tagged release:
+#   npm automation/granular token (Publish scope) → add as the `NPM_TOKEN` repo secret:
+#     gh secret set NPM_TOKEN --repo everydaydesign/datareader-spss
+# Until that secret exists, the publish step will fail (the CI test workflow is unaffected).
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+  id-token: write # OIDC — required for npm provenance attestation
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.8
+      # npm (not bun) performs the publish — it's the CLI that supports --provenance.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+      - run: bun install --frozen-lockfile
+      - run: bun run build
+      - run: bun test
+      - run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
